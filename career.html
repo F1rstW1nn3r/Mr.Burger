@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кар'єра</title>
+    <link rel="stylesheet" href="career.css">
+    <link rel="icon" sizes="16x16" type="image/png" href="logo16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="logo32x32.png">
+</head>
+<body>
+    <header>
+        <!-- Логотип та навігаційне меню -->
+        <div class="logo">
+            <img src="logo1.jpg" alt="Mr.Burger Logo">
+        </div>
+        <div class="menu-right">
+            <h1>Mr.Burger Fast Food</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a<button id="openModalBtn" class="openModalBtn">Замовити столик</button></li>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="voucher.html">Ваучери</a></li>
+                <li><a href="places.html">Місця</a></li>
+                <li><a href="career.html">Кар'єра</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-text">
+        Кар'єра
+    </div>
+
+    <div class="text-field">
+        Будемо раді вітати Вас у нашій великій родині!
+    </div>
+
+    <form action="/submit-data" method="post">
+        <div class="container">
+            <label for="uname"><b>Ваше ПІБ</b></label>
+            <input type="text" name="uname" required>
+
+            <label for="phone"><b>Ваш номер телефону</b></label>
+            <input type="text" name="phone" id="phoneInput" value="+380" required>
+
+            <label for="phone"><b>Ваша електронна пошта</b></label>
+            <input type="text" name="mail" id="mailInput" required>
+
+            <button type="submit" class="mdl-btn1">Відправити</button>
+        </div>
+    </form>
+
+
+    <footer>
+        <p>© 2024 Mr.Burger. Усі права захищені.</p>
+    </footer>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content animate">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('modal').style.display='none'" class="close" title="Close">×</span>
+                <div class='coment-image'>
+                    <img src='logosm.png'>
+                </div>
+            </div>
+            <form action="/submit-order" method="post">
+            <div class="container">
+                <label for="uname"><b>Ваше ПІБ</b></label>
+                <input type="text" name="uname" required>
+    
+                <label for="phone"><b>Ваш номер телефону</b></label>
+                <input type="text" name="phone" id="phoneInput" value="+380" required>
+    
+                <button type="submit" class="mdl-btn">Відправити</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    
+    
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var openModalBtn = document.getElementById('openModalBtn');
+        var modal = document.getElementById('modal');
+            
+        openModalBtn.addEventListener("click", function() {
+            modal.style.display = 'block';
+            localStorage.setItem('modalOpened', 'true');
+        });
+        });
+</script>
+</body>
+</html>

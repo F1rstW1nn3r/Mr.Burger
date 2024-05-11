@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <link rel='stylesheet' href='places.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <title>Місця</title>
+    <link rel="icon" sizes="16x16" type="image/png" href="logo16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="logo32x32.png">
+    </head>
+    <body>
+
+        <header>
+            <!-- Логотип та навігаційне меню -->
+            <div class="logo">
+                <img src="logo1.jpg" alt="Mr.Burger Logo">
+            </div>
+            <div class="menu-right">
+                <h1>Mr.Burger Fast Food</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a<button id="openModalBtn" class="openModalBtn">Замовити столик</button></li>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="menu.html">Меню</a></li>
+                    <li><a href="voucher.html">Ваучери</a></li>
+                    <li><a href="places.html">Місця</a></li>
+                    <li><a href="career.html">Кар'єра</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="main-text">
+            Адреси, де нас можна знайти
+        </div>
+        <nav class="adress-nav">
+            <ul>
+                <li><a href="https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A5%D1%80%D0%B5%D1%89%D0%B0%D1%82%D0%B8%D0%BA,+24,+%D0%9A%D0%B8%D1%97%D0%B2,+02000/" target="_blank">м.Київ, вул. Хрещатик, 24</a></li>
+                <li><a href="https://www.google.com/maps/place/%D0%91%D0%B5%D1%80%D0%B5%D1%81%D1%82%D0%B5%D0%B9%D1%81%D1%8C%D0%BA%D0%B8%D0%B9+%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82,+18,+%D0%9A%D0%B8%D1%97%D0%B2,+02000/" target="_blank">м.Київ, Берестейський проспект, 18</a></li>
+            </ul>
+        </nav>
+
+
+
+        <footer>
+            <p>© 2024 Mr.Burger. Усі права захищені.</p>
+        </footer>
+
+        <div id="modal" class="modal">
+            <div class="modal-content animate">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('modal').style.display='none'" class="close" title="Close">×</span>
+                    <div class='coment-image'>
+                        <img src='logosm.png'>
+                    </div>
+                </div>
+                <form action="/submit-order" method="post">
+                <div class="container">
+                    <label for="uname"><b>Ваше ПІБ</b></label>
+                    <input type="text" name="uname" required>
+        
+                    <label for="phone"><b>Ваш номер телефону</b></label>
+                    <input type="text" name="phone" id="phoneInput" value="+380" required>
+        
+                    <button type="submit" class="mdl-btn">Відправити</button>
+                </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                 var openModalBtn = document.getElementById('openModalBtn');
+                 var modal = document.getElementById('modal');
+                
+                openModalBtn.addEventListener("click", function() {
+                    modal.style.display = 'block';
+                    localStorage.setItem('modalOpened', 'true');
+                });
+            });
+        </script>
+    </body>
+</html>
